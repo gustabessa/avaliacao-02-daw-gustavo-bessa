@@ -1,0 +1,88 @@
+
+#home {
+  margin-top: -24px !important;
+  background-image: url('../image/home.jpg');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50%;
+}
+
+#vagas {
+  background-color:#000000;
+}
+
+.homem-pensando {
+  max-height: 300px;
+}
+
+#subscribe {
+  padding-top: 5vh;
+  background-color:#d82548;
+}
+
+.div-center {
+  margin: 0 auto;
+}
+
+.top-offset-30 {
+  height: 30vh;
+}
+
+.top-offset-20 {
+  height: 20vh;
+}
+
+.top-offset-10 {
+  height: 10vh;
+}
+
+.translucent-box {
+  background-color: rgba(47, 40, 40, 0.367);
+  border-radius: 5px;
+  border: solid 1px #ced4f0;
+  padding: 20px;
+  text-shadow: 1px 0px 20px #ff0101;
+}
+
+.bg-dark-title {
+  color: white;
+  text-align: center;
+  text-shadow: 1px 0px 20px #ff0101;
+}
+
+@media screen and (min-width: 800px) {
+
+  h1 {
+    font-size: 5vw;
+  }
+
+}
+
+@media screen and (min-width: 1100px) {
+
+  #home {
+    background-size: 100% 100%;
+  }
+
+}
+
+@media screen and (min-width: 769px) {
+
+  .img-down {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .img-right {
+    display: none;
+  }
+
+  #subscribe > .top-offset-10 {
+    height: 0;
+  }
+
+}

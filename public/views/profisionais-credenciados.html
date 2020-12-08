@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Trabalhe Conosco</title>
+    <link href="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cadastro-profissional.css">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script type="text/javascript" src="../javascript/jquery.lib.js"></script>
+    <script type="text/javascript" src="../javascript/main.js"></script>
+    <script type="text/javascript" src="../javascript/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="../javascript/profissionais-credenciados-jquery.js"></script>
+    <script type="text/javascript" src="../javascript/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <div id="output"></div>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <button type="button" id="sidebarCollapse" class="btn btn-info corner-btn sticky-top">
+                <span>></span>
+            </button>
+
+            <h3 class="text-center page-title">Profissionais Credenciados</h3>
+            <div class="line"></div>
+
+            <div class="container w-75 scrollbar scrollbar-pink square p-0" style="overflow-x: auto;">
+              <table class="table table-hover table-dark mb-0"  style="table-layout: fixed">
+                <thead>
+                  <tr>
+                    <th style="width: 100px;">...</th>
+                    <th style="width: 50px;">Id</th>
+                    <th style="width: 200px;">Nome</th>
+                    <th style="width: 200px;">CPF</th>
+                    <th style="width: 200px;">Profissao</th>
+                    <th style="width: 200px;">Data de Nascimento</th>
+                    <th style="width: 200px;">Telefone</th>
+                    <th style="width: 200px;">Escolaridade</th>
+                    <th style="width: 200px;">Habilidades</th>
+                    <th style="width: 200px;">Data de Cadastro</th>
+                    <th style="width: 200px;">Data de Modificacao</th>
+                  </tr>
+                </thead>
+                <tbody id="results">
+                  
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+    <script id="vagas-template" type="text/x-handlebars-template">
+      {{#each this}}
+      <tr>
+        <td>
+          <a href="#{{id}}">lixo</a>
+          <a href="/cadastro-profissional">lapis</a>
+        </td>
+        <td>{{id}}</td>
+        <td>{{nome}}</td>
+        <td>{{formatCpf cpf}}</td>
+        <td>{{profisso.nome}}</td>
+        <td>{{formatDate dataNascimento}}</td>
+        <td>{{formatTelefone telefone}}</td>
+        <td>{{escolaridade.nome}}</td>
+        <td>{{habilidades}}</td>
+        <td>{{formatDate createdAt}}</td>
+        <td>{{formatDate updatedAt}}</td>
+      </tr>
+      {{/each}}
+    </script>
+    <script>
+      
+    </script>
+    <script src="../javascript/handlebars.precompiled.js"></script>
+</body>
+
+</html>
