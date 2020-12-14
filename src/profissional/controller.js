@@ -108,7 +108,6 @@ exports.update = (req, res) => {
 
   Profissional.update({
     nome: req.body.nome,
-    cpf: req.body.cpf,
     dataNascimento: req.body.nascimento,
     telefone: req.body.telefone,
     fk_profissional_escolaridade: req.body.escolaridade,
