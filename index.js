@@ -16,8 +16,8 @@ app.get('/cadastro-profissional', (req, res)=>{
   res.sendFile(ROOT_PATH + '/public/views/cadastro-profissional.html')
 })
 
-app.get('/vagas', (req, res)=>{
-  res.sendFile(ROOT_PATH + '/public/views/vagas.html')
+app.get('/profissao-escolaridade', (req, res)=>{
+  res.sendFile(ROOT_PATH + '/public/views/profissao-escolaridade.html')
 })
 
 app.get('/profisionais-credenciados', (req, res)=>{

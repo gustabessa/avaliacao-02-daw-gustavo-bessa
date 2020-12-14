@@ -16,14 +16,16 @@ Profissional.Escolaridade = Escolaridade.hasMany(Profissional, {
   foreignKey: {
     name: 'fk_profissional_escolaridade',
     allowNull: false
-  }
+  },
+  onDelete: 'RESTRICT'
 })
 
 Profissional.Escolaridade = Profissional.belongsTo(Escolaridade, {
   foreignKey: {
     name: 'fk_profissional_escolaridade',
     allowNull: false
-  }
+  },
+  onDelete: 'RESTRICT'
 })
 
 module.exports = Escolaridade

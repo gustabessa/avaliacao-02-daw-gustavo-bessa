@@ -16,14 +16,16 @@ Profissional.Profissao = Profissao.hasMany(Profissional, {
   foreignKey: {
     name: 'fk_profissional_profissao',
     allowNull: false
-  }
+  },
+  onDelete: 'RESTRICT'
 })
 
 Profissao.Profissional = Profissional.belongsTo(Profissao, {
   foreignKey: {
     name: 'fk_profissional_profissao',
     allowNull: false
-  }
+  },
+  onDelete: 'RESTRICT'
 })
 
 module.exports = Profissao

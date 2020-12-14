@@ -6,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Trabalhe Conosco</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/cadastro-profissional.css">
-    <script type="text/javascript" src="../javascript/jquery.lib.js"></script>
-    <script type="text/javascript" src="../javascript/main.js"></script>
-    <script type="text/javascript" src="../javascript/jquery.mask.min.js"></script>
-    <script type="text/javascript" src="../javascript/trabalhe-conosco-jquery.js"></script>
-    <script type="text/javascript" src="../javascript/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastro-profissional.css">
+    <link rel="stylesheet" href="css/jquery.toast.min.css">
+    <script src="https://kit.fontawesome.com/93d42b2cb5.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script type="text/javascript" src="javascript/jquery.lib.js"></script>
+    <script type="text/javascript" src="javascript/jquery.toast.min.js"></script>
+    <script type="text/javascript" src="javascript/main.js"></script>
+    <script type="text/javascript" src="javascript/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="javascript/trabalhe-conosco-jquery.js"></script>
+    <script type="text/javascript" src="javascript/bootstrap.min.js"></script>
 
 </head>
 
@@ -47,74 +51,79 @@
                     <div class="col-sm-12">
                         <strong>CPF:</strong>
                         <div class="input-group">
-                            <input type="text" id="cpf" class="form-control">
+                            <input autocomplete="off" id="cpf" type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-info" onclick="Profissional.buscaUmByCpf()" type="button"><i class="fas fa-search"></i></button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <div class="col-sm-12">
-                        <strong>Nome:</strong>
-                        <div class="input-group">
-                            <input type="text" id="nome" class="form-control">
+                <div id="form" class="d-none">
+                    <div class="row mb-3">
+                        <div class="col-sm-12">
+                            <strong>Nome:</strong>
+                            <div class="input-group">
+                                <input autocomplete="off" type="text" id="nome" class="form-control">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-sm-12">
-                        <strong>Nascimento:</strong>
-                        <div class="input-group">
-                            <input type="date" id="nascimento" class="form-control">
+                    <div class="row mb-3">
+                        <div class="col-sm-12">
+                            <strong>Nascimento:</strong>
+                            <div class="input-group">
+                                <input type="date" id="nascimento" class="form-control">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-sm-12">
-                        <strong>Telefone:</strong>
-                        <div class="input-group">
-                            <input type="text" id="telefone" class="form-control">
+                    <div class="row mb-3">
+                        <div class="col-sm-12">
+                            <strong>Telefone:</strong>
+                            <div class="input-group">
+                                <input autocomplete="off" type="text" placeholder="(00) 0 0000-0000" id="telefone" class="form-control">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-sm-12">
-                        <strong>Profissão:</strong>
-                        <div class="input-group">
-                            <select id="profissaoList" class="form-control">
-                                <option value="null">Escolha uma profissão</option>
-                            </select>
+                    <div class="row mb-3">
+                        <div class="col-sm-12">
+                            <strong>Profissão:</strong>
+                            <div class="input-group">
+                                <select id="profissaoList" class="form-control">
+                                    <option value="null">Escolha uma profissão</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-sm-12">
-                        <strong>Escolaridade:</strong>
-                        <div class="input-group">
-                            <select id="escolaridadeList" class="form-control">
-                                <option value="null">Escolha uma escolaridade</option>
-                            </select>
+                    <div class="row mb-3">
+                        <div class="col-sm-12">
+                            <strong>Escolaridade:</strong>
+                            <div class="input-group">
+                                <select id="escolaridadeList" class="form-control">
+                                    <option value="null">Escolha uma escolaridade</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-sm-12">
-                        <strong>Habilidades:</strong>
-                        <div class="input-group">
-                            <textarea class="form-control" id="habilidades" style="resize: none;" rows="5"></textarea>
+                    <div class="row mb-3">
+                        <div class="col-sm-12">
+                            <strong>Habilidades:</strong>
+                            <div class="input-group">
+                                <textarea autocomplete="off" class="form-control" id="habilidades" style="resize: none;" rows="5"></textarea>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 offset-sm-2 mt-3">
-                        <button type="button" class="w-100 btn btn-warning" >Limpar</button>    
-                    </div>
-                    <div class="col-sm-4 mt-3">
-                        <button type="submit" class="w-100 btn btn-success" onclick="Profissional.salvar()">Salvar</button>    
+                    <div class="row">
+                        <div class="col-sm-4 offset-sm-2 mt-3">
+                            <button type="button" class="w-100 btn btn-warning" onclick="Profissional.limpar()">Limpar</button>    
+                        </div>
+                        <div class="col-sm-4 mt-3">
+                            <button type="submit" class="w-100 btn btn-success" onclick="Profissional.salvar()">Salvar</button>    
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="../javascript/handlebars.precompiled.js"></script>
+    <script src="javascript/handlebars.precompiled.js"></script>
 </body>
 
 </html>

@@ -2,6 +2,14 @@ html {
   overflow-x: hidden;
 }
 
+a {
+  cursor: pointer;
+}
+
+.pink-text:hover {
+  color: #fd1644;
+}
+
 .monospace {
   font-family: 'Courier New', Courier, monospace;
 }
@@ -13,6 +21,16 @@ section {
 
 .page-title {
   color:#fd1644;
+}
+
+.center {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.btn-search {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .white-box {

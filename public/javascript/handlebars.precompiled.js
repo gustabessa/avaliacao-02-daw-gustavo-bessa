@@ -22,13 +22,13 @@ $(function () {
             </ul>
         </li>
         <li>
-            <a href="/cadastro-profissional">Cadastro Profissional*</a>
+            <a href="/cadastro-profissional">Cadastro Profissional</a>
         </li>
         <li>
             <a href="/profisionais-credenciados">Profissionais Credenciados</a>
         </li>
         <li>
-            <a href="/vagas">Vagas Disponíveis</a>
+            <a href="/profissao-escolaridade">Profissões e Escolaridade</a>
         </li>
     </ul>
 </nav>`
